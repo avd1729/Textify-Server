@@ -71,8 +71,8 @@ def download_aggregated_model():
                 else:
                     aggregated['n'] += model['n']
                     aggregated['total_words'] += model['total_words']
-                    for word, val in model['vocabulary'].items():
-                        aggregated['vocabulary'][word] = aggregated['vocabulary'].get(word, 0) + val
+                    for word in model['vocabulary']:
+                        aggregated['vocabulary'][word] = aggregated['vocabulary'].get(word, 0) + 1
 
                 count += 1
 
